@@ -1,0 +1,2315 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+
+  <meta name="description"
+        content="Lección interactiva sobre imágenes, audio,
+        vídeo y elementos multimedia en HTML5.">
+
+  <title>HTML5: imágenes y elementos multimedia</title>
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/jpeg" href="assets/images/favicon.jpeg">
+</head>
+
+<body>
+
+<a class="skip" href="#contenido">
+  Saltar al contenido
+</a>
+
+<!-- CABECERA -->
+<header>
+  <div class="wrap">
+    <p class="eyebrow">UF1302 · UD2 · MF0950_2</p>
+
+    <h1>HTML5: imágenes y elementos multimedia</h1>
+
+    <p class="lead">
+      Aprende a incorporar imágenes, sonidos y vídeos
+      a tus páginas web. Descubre qué etiquetas necesitas,
+      cómo utilizarlas correctamente y cómo conseguir
+      que el contenido sea accesible y se adapte
+      a diferentes dispositivos.
+    </p>
+  </div>
+</header>
+
+<!-- NAVEGACIÓN -->
+<nav aria-label="Apartados de la lección">
+  <div class="wrap">
+    <a href="#imagenes">Imágenes</a>
+    <a href="#fuentes">Fuentes</a>
+    <a href="#formatos">Formatos</a>
+    <a href="#rendimiento">Optimización</a>
+    <a href="#audio">Audio</a>
+    <a href="#video">Vídeo</a>
+    <a href="#youtube">YouTube</a>
+    <a href="#otros">Otras etiquetas</a>
+    <a href="#resumen">Práctica final</a>
+  </div>
+</nav>
+
+<main id="contenido" class="wrap">
+
+  <!-- INTRODUCCIÓN -->
+  <section class="intro">
+
+    <p class="eyebrow">Antes de comenzar</p>
+
+    <h2>Vamos a dar vida a nuestras páginas web</h2>
+
+    <p>
+      Hasta ahora hemos aprendido a crear páginas web
+      utilizando HTML para organizar títulos, párrafos,
+      enlaces, listas y otros contenidos.
+      Pero una página web no tiene por qué contener
+      solamente texto.
+    </p>
+
+    <p>
+      Podemos incorporar fotografías para mostrar
+      nuestros productos, vídeos para explicar cómo
+      funciona un servicio o archivos de audio
+      para que los visitantes escuchen una explicación.
+    </p>
+
+    <p>
+      HTML5 nos proporciona etiquetas específicas
+      para incorporar cada uno de estos elementos.
+      Lo importante es aprender a elegir la etiqueta
+      adecuada, conocer sus atributos y comprender
+      cómo funciona el contenido dentro del navegador.
+    </p>
+
+    <p>
+      También debemos tener en cuenta a las personas
+      que van a utilizar nuestra página.
+      Por ejemplo, una imagen necesita una descripción
+      alternativa cuando transmite información importante.
+      Del mismo modo, un audio debe permitir que el usuario
+      decida cuándo reproducirlo, pausarlo o ajustar
+      su volumen.
+    </p>
+
+    <p>
+      En esta lección encontrarás explicaciones sencillas,
+      ejemplos reales de HTML y pequeñas actividades
+      interactivas. La idea es que puedas experimentar,
+      observar los resultados y después utilizar
+      el código en tus propias páginas.
+    </p>
+
+    <aside>
+      <strong>¿Qué vas a aprender?</strong>
+      <p>
+        Al finalizar podrás insertar imágenes,
+        seleccionar formatos adecuados, optimizar
+        archivos, añadir audio y vídeo con controles
+        e incorporar vídeos de YouTube.
+      </p>
+      <p>
+        Además, conocerás algunas buenas prácticas
+        de accesibilidad y rendimiento que te ayudarán
+        a crear páginas más profesionales.
+      </p>
+    </aside>
+
+  </section>
+
+  <!-- SECCIÓN 1: IMÁGENES -->
+  <section id="imagenes">
+
+    <div class="title">
+      <b>01</b>
+      <div>
+        <p class="eyebrow">Primeros pasos</p>
+        <h2>Cómo insertar imágenes en HTML</h2>
+      </div>
+    </div>
+
+    <h3>¿Cómo sabe el navegador dónde está una imagen?</h3>
+
+    <p>
+      Cuando insertamos una imagen en una página web,
+      el archivo no se escribe directamente dentro
+      del documento HTML. Lo que hacemos es indicar
+      al navegador dónde puede encontrarlo.
+    </p>
+
+    <p>
+      Para ello utilizamos la etiqueta
+      <code>&lt;img&gt;</code> y el atributo
+      <code>src</code>, que contiene la ruta
+      del archivo.
+    </p>
+
+    <p>
+      En esta lección tenemos una fotografía de un paisaje
+      llamada <code>paisaje.jpg</code>, guardada en
+      <code>assets/images</code>. Como esta página
+      <code>index.html</code> está en la carpeta principal,
+      la ruta de la imagen empieza por
+      <code>assets/images/</code>:
+    </p>
+
+    <article class="tool">
+      <h3>Ejemplo: insertar el paisaje de nuestros recursos</h3>
+
+      <pre><code>&lt;img src="assets/images/paisaje.jpg"
+     alt="Montañas cubiertas de niebla junto a un lago y vegetación"&gt;</code></pre>
+    </article>
+
+    <p>
+      El navegador buscará las carpetas
+      <code>assets</code> y <code>images</code>, y dentro
+      de esta última el archivo <code>paisaje.jpg</code>.
+      Esa ruta relativa permite reutilizar un recurso
+      que ya forma parte del proyecto; no necesitamos
+      sustituirlo por una imagen de prueba de Internet.
+    </p>
+
+    <h3>La importancia de organizar nuestros archivos</h3>
+
+    <p>
+      Una buena práctica consiste en guardar cada tipo
+      de recurso en su propia carpeta.
+      Así resulta más sencillo encontrar los archivos
+      y evitar errores.
+    </p>
+
+    <article class="tool">
+      <h3>Ejemplo de estructura de carpetas</h3>
+
+      <pre><code>mi-web/
+│
+├── index.html
+│
+├── assets/
+│   └── images/
+│       ├── favicon.jpeg
+│       └── paisaje.jpg
+│
+├── audio/
+│   └── explicacion.mp3
+│
+├── video/
+│   └── tutorial.mp4
+│
+└── subtitulos/
+    └── tutorial-es.vtt</code></pre>
+    </article>
+
+    <h3>¿Cómo escribimos las rutas?</h3>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Situación</th>
+            <th>Ruta</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>El archivo está junto al HTML</td>
+            <td><code>foto.jpg</code></td>
+          </tr>
+
+          <tr>
+            <td>Está dentro de una subcarpeta</td>
+            <td><code>imagenes/foto.jpg</code></td>
+          </tr>
+
+          <tr>
+            <td>Hay que subir un nivel</td>
+            <td><code>../imagenes/foto.jpg</code></td>
+          </tr>
+
+          <tr>
+            <td>Está alojado en otra web</td>
+            <td><code>https://ejemplo.com/foto.jpg</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <aside>
+      <strong>Recuerda:</strong>
+      <p>
+        Los nombres de los archivos y las carpetas deben
+        coincidir con lo que escribimos en el código.
+        Un error en el nombre, la extensión o la ruta
+        puede impedir que la imagen aparezca.
+      </p>
+      <p>
+        Para evitar problemas, utiliza preferentemente
+        nombres sencillos, sin espacios ni tildes.
+        Por ejemplo: <code>mi-primera-foto.jpg</code>.
+      </p>
+    </aside>
+
+    <h3>Los atributos más importantes de una imagen</h3>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>¿Para qué sirve?</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th><code>src</code></th>
+            <td>
+              Indica la dirección donde está guardada
+              la imagen.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>alt</code></th>
+            <td>
+              Proporciona una descripción alternativa
+              de la imagen.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>width</code></th>
+            <td>
+              Indica el ancho de referencia en píxeles.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>height</code></th>
+            <td>
+              Indica la altura de referencia en píxeles.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>loading</code></th>
+            <td>
+              Permite indicar cómo queremos que se
+              gestione la carga de la imagen.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>decoding</code></th>
+            <td>
+              Proporciona una sugerencia sobre cómo
+              descodificar la imagen.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>El atributo alt y la accesibilidad</h3>
+
+    <p>
+      El atributo <code>alt</code> es especialmente
+      importante porque permite ofrecer una alternativa
+      textual al contenido de una imagen.
+    </p>
+
+    <p>
+      Pensemos en una persona que utiliza un lector
+      de pantalla. Si la imagen transmite información,
+      necesitamos que pueda comprenderla sin verla.
+    </p>
+
+    <p>
+      No basta con escribir «imagen» o «fotografía».
+      Debemos describir lo que resulta importante
+      en ese contexto.
+    </p>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Texto alternativo</th>
+            <th>Valoración</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><code>alt="imagen"</code></td>
+            <td>
+              Poco útil: no aporta información.
+            </td>
+          </tr>
+
+          <tr>
+            <td><code>alt="foto1.jpg"</code></td>
+            <td>
+              Incorrecto: es el nombre del archivo.
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <code>alt="Gato naranja dormido sobre un sofá"</code>
+            </td>
+            <td>
+              Adecuado para una fotografía cuyo contenido
+              sea relevante.
+            </td>
+          </tr>
+
+          <tr>
+            <td><code>alt=""</code></td>
+            <td>
+              Adecuado cuando la imagen es
+              exclusivamente decorativa.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Laboratorio: modifica una imagen</h3>
+
+    <p>
+      Vamos a experimentar con algunos atributos.
+      Esta vez mostraremos el archivo real
+      <code>assets/images/paisaje.jpg</code> de nuestros
+      recursos, no un placeholder. Mueve el control
+      de ancho, activa el borde o cambia el texto
+      alternativo. Observa qué ocurre con la imagen
+      y cómo se modifica el código HTML.
+    </p>
+
+    <div class="demo">
+
+      <article>
+        <h3>Resultado en el navegador</h3>
+
+        <figure>
+          <img
+            id="demoImage"
+            src="assets/images/paisaje.jpg"
+            alt="Montañas cubiertas de niebla junto a un lago y vegetación"
+            width="560"
+            height="280"
+          >
+
+          <figcaption>
+            Paisaje de montaña junto a un lago.
+          </figcaption>
+        </figure>
+
+        <fieldset>
+          <legend>Prueba los atributos</legend>
+
+          <label for="imageWidth">
+            Ancho:
+            <output id="widthOut">560</output> px
+          </label>
+
+          <input
+            id="imageWidth"
+            type="range"
+            min="220"
+            max="760"
+            value="560"
+          >
+
+          <label for="imageBorder">
+            <input id="imageBorder" type="checkbox">
+            Mostrar borde
+          </label>
+
+          <label for="imageAlt">
+            Texto alternativo
+          </label>
+
+          <input
+            id="imageAlt"
+            type="text"
+            value="Montañas cubiertas de niebla junto a un lago y vegetación"
+          >
+        </fieldset>
+      </article>
+
+      <article class="code">
+
+        <div>
+          <h3>Código HTML</h3>
+          <button type="button" data-copy="imageCode">
+            Copiar código
+          </button>
+        </div>
+
+        <pre><code id="imageCode"></code></pre>
+
+      </article>
+
+    </div>
+
+    <aside>
+      <strong>¿Qué acabamos de comprobar?</strong>
+      <p>
+        Los atributos permiten proporcionar información
+        al navegador sobre la imagen.
+        Pero cambiar su tamaño visible no significa
+        que el archivo descargado pese menos.
+        La optimización del archivo la estudiaremos
+        más adelante.
+      </p>
+    </aside>
+
+    <h3>Imágenes con pie: figure y figcaption</h3>
+
+    <p>
+      Cuando queremos acompañar una imagen de un texto
+      explicativo, podemos utilizar
+      <code>&lt;figure&gt;</code> y
+      <code>&lt;figcaption&gt;</code>.
+    </p>
+
+    <p>
+      La primera etiqueta agrupa el contenido y
+      la segunda incorpora un pie visible para
+      los visitantes.
+    </p>
+
+    <article class="tool">
+      <h3>Ejemplo</h3>
+
+      <pre><code>&lt;figure&gt;
+  &lt;img
+    src="imagenes/portatil.jpg"
+    alt="Portátil sobre una mesa"
+    width="600"
+    height="400"
+  &gt;
+
+  &lt;figcaption&gt;
+    Ordenador utilizado en nuestra oficina.
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+    </article>
+
+    <p>
+      Recuerda que el pie de foto no sustituye
+      necesariamente al atributo <code>alt</code>.
+      Ambos pueden aportar información diferente.
+    </p>
+
+  </section>
+
+  <!-- SECCIÓN 2: FUENTES -->
+  <section id="fuentes">
+
+    <div class="title">
+      <b>02</b>
+
+      <div>
+        <p class="eyebrow">Recursos</p>
+        <h2>¿Dónde podemos conseguir imágenes?</h2>
+      </div>
+    </div>
+
+    <p>
+      Ya sabemos insertar una imagen, pero antes
+      necesitamos conseguir el archivo que vamos
+      a utilizar.
+    </p>
+
+    <p>
+      Podemos utilizar fotografías propias, crear
+      nuestros gráficos o recurrir a bancos
+      de imágenes disponibles en Internet.
+    </p>
+
+    <p>
+      Es importante distinguir entre los bancos
+      de fotografías y los servicios que generan
+      imágenes provisionales para practicar.
+    </p>
+
+    <h3>Bancos de imágenes</h3>
+
+    <p>
+      Los siguientes servicios ofrecen fotografías
+      y otros recursos que pueden utilizarse bajo
+      sus respectivas condiciones de licencia.
+    </p>
+
+    <div class="cards">
+
+      <a href="https://www.pexels.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <h3>Pexels</h3>
+
+        <p>
+          Fotografías y vídeos para proyectos
+          personales y profesionales.
+          Revisa sus condiciones de uso.
+        </p>
+      </a>
+
+      <a href="https://unsplash.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <h3>Unsplash</h3>
+
+        <p>
+          Fotografías de alta calidad,
+          especialmente útiles para ilustrar
+          páginas web.
+        </p>
+      </a>
+
+      <a href="https://pixabay.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <h3>Pixabay</h3>
+
+        <p>
+          Fotografías, ilustraciones,
+          gráficos, vídeos y otros recursos.
+        </p>
+      </a>
+
+      <a href="https://loremflickr.com/"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <h3>LoremFlickr</h3>
+
+        <p>
+          Servicio de fotografías aleatorias
+          que podemos utilizar para realizar
+          pruebas de diseño.
+        </p>
+      </a>
+
+      <a href="https://placehold.co/"
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <h3>Placehold.co</h3>
+
+        <p>
+          Genera imágenes provisionales
+          del tamaño que necesitemos.
+        </p>
+      </a>
+
+      <article>
+        <h3>Fotografías propias</h3>
+
+        <p>
+          También puedes utilizar tus fotografías.
+          Comprueba los permisos necesarios cuando
+          aparecen personas identificables.
+        </p>
+      </article>
+
+    </div>
+
+    <h3>¿Todas las imágenes gratuitas se pueden utilizar?</h3>
+
+    <p>
+      No necesariamente. Que una imagen esté
+      disponible en Internet o podamos descargarla
+      sin pagar no significa que tengamos permiso
+      para utilizarla de cualquier manera.
+    </p>
+
+    <p>
+      Las imágenes pueden estar protegidas
+      por derechos de autor. Por eso debemos
+      consultar sus condiciones de uso antes
+      de incorporarlas a una web.
+    </p>
+
+    <aside class="warning">
+      <strong>Antes de utilizar una imagen, comprueba:</strong>
+
+      <ul>
+        <li>Si está permitido publicarla en una web.</li>
+        <li>Si puede utilizarse con fines comerciales.</li>
+        <li>Si permite modificaciones.</li>
+        <li>Si debemos mencionar al autor.</li>
+        <li>
+          Si contiene personas, marcas u otros
+          elementos con derechos adicionales.
+        </li>
+      </ul>
+    </aside>
+
+    <h3>¿Qué es un placeholder?</h3>
+
+    <p>
+      Imagina que estás diseñando la página de una tienda
+      y todavía no tienes las fotografías definitivas
+      de sus productos.
+    </p>
+
+    <p>
+      Para poder avanzar en el diseño puedes utilizar
+      un <strong>placeholder</strong>, es decir,
+      una imagen provisional que ocupa el espacio
+      donde aparecerá la imagen final.
+    </p>
+
+    <p>
+      Por ejemplo, esta dirección genera una imagen
+      de 600 píxeles de ancho y 400 de alto:
+    </p>
+
+    <article class="tool">
+      <pre><code>https://placehold.co/600x400</code></pre>
+    </article>
+
+    <p>
+      Si queremos que aparezca un texto, podemos
+      añadir el parámetro <code>text</code>:
+    </p>
+
+    <article class="tool">
+      <pre><code>https://placehold.co/600x400?text=Mi+producto</code></pre>
+    </article>
+
+    <h3>Laboratorio: crea tu propio placeholder</h3>
+
+    <p>
+      Introduce las dimensiones y un texto.
+      La aplicación generará la URL que puedes
+      utilizar dentro del atributo <code>src</code>.
+    </p>
+
+    <article class="tool">
+
+      <h3>Generador de imágenes provisionales</h3>
+
+      <div class="fields">
+
+        <label for="phWidth">
+          Ancho
+          <input
+            id="phWidth"
+            type="number"
+            value="640"
+            min="10"
+            max="2000"
+          >
+        </label>
+
+        <label for="phHeight">
+          Alto
+          <input
+            id="phHeight"
+            type="number"
+            value="360"
+            min="10"
+            max="2000"
+          >
+        </label>
+
+        <label for="phText">
+          Texto de la imagen
+          <input
+            id="phText"
+            type="text"
+            value="Mi imagen"
+          >
+        </label>
+
+      </div>
+
+      <p id="phUrl"></p>
+
+      <pre><code id="phCode"></code></pre>
+
+      <button type="button" data-copy="phCode">
+        Copiar código
+      </button>
+
+    </article>
+
+    <aside>
+      <strong>Una diferencia importante:</strong>
+      <p>
+        LoremFlickr proporciona fotografías aleatorias,
+        mientras que Placehold.co genera imágenes
+        provisionales con dimensiones y texto definidos.
+      </p>
+      <p>
+        Ambos pueden ayudarnos durante el aprendizaje,
+        pero para una web definitiva debemos seleccionar
+        y optimizar las imágenes adecuadas.
+      </p>
+    </aside>
+
+  </section>
+
+  <!-- SECCIÓN 3: FORMATOS -->
+  <section id="formatos">
+
+    <div class="title">
+      <b>03</b>
+
+      <div>
+        <p class="eyebrow">Elección de archivos</p>
+        <h2>Formatos de imagen: ¿cuál debemos utilizar?</h2>
+      </div>
+    </div>
+
+    <p>
+      Seguramente has visto imágenes con extensiones
+      como <code>.jpg</code>, <code>.png</code>
+      o <code>.webp</code>.
+    </p>
+
+    <p>
+      Estas extensiones indican el formato del archivo.
+      Cada formato tiene unas características distintas,
+      por lo que no todos resultan igual de adecuados
+      para cualquier imagen.
+    </p>
+
+    <p>
+      Por ejemplo, una fotografía suele tener muchos
+      colores y detalles, mientras que un logotipo
+      puede estar formado por líneas y formas sencillas.
+      Es lógico que ambos necesiten soluciones diferentes.
+    </p>
+
+    <div class="table">
+      <table>
+
+        <thead>
+          <tr>
+            <th>Formato</th>
+            <th>¿Para qué se utiliza?</th>
+            <th>Ventajas</th>
+            <th>Limitaciones</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <th>JPG / JPEG</th>
+            <td>Fotografías</td>
+            <td>Buena compresión y compatibilidad</td>
+            <td>No admite transparencia</td>
+          </tr>
+
+          <tr>
+            <th>PNG</th>
+            <td>Capturas, gráficos y transparencias</td>
+            <td>Compresión sin pérdida</td>
+            <td>Puede ocupar más espacio</td>
+          </tr>
+
+          <tr>
+            <th>WebP</th>
+            <td>Fotografías y gráficos web</td>
+            <td>Buena compresión y transparencia</td>
+            <td>Revisar compatibilidad si se usan navegadores antiguos</td>
+          </tr>
+
+          <tr>
+            <th>AVIF</th>
+            <td>Fotografías optimizadas</td>
+            <td>Compresión muy eficiente</td>
+            <td>La codificación puede ser más exigente</td>
+          </tr>
+
+          <tr>
+            <th>SVG</th>
+            <td>Logotipos, iconos e ilustraciones</td>
+            <td>Se amplía sin perder nitidez</td>
+            <td>No es adecuado para fotografías convencionales</td>
+          </tr>
+
+          <tr>
+            <th>GIF</th>
+            <td>Animaciones sencillas</td>
+            <td>Compatible con muchos navegadores</td>
+            <td>Color limitado y poca eficiencia</td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Imágenes vectoriales e imágenes de píxeles</h3>
+
+    <p>
+      Una fotografía JPG o PNG está formada por
+      píxeles, es decir, pequeños puntos de color.
+      Si ampliamos mucho una imagen pequeña,
+      podemos comenzar a distinguirlos y perder nitidez.
+    </p>
+
+    <p>
+      Un archivo SVG funciona de otra manera:
+      describe formas, líneas y curvas mediante
+      información vectorial.
+      Por eso resulta adecuado para logotipos
+      e iconos que deben verse bien a diferentes tamaños.
+    </p>
+
+    <h3>Comprueba lo aprendido</h3>
+
+    <div class="mini">
+      <h3>Necesitas una fotografía para una web. ¿Qué elegirías?</h3>
+
+      <button type="button" data-answer="no">SVG</button>
+      <button type="button" data-answer="yes">WebP o JPEG optimizado</button>
+      <button type="button" data-answer="no">GIF</button>
+
+      <p aria-live="polite"></p>
+    </div>
+
+    <div class="mini">
+      <h3>Necesitas un logotipo que mantenga su nitidez al ampliarse.</h3>
+
+      <button type="button" data-answer="yes">SVG</button>
+      <button type="button" data-answer="no">JPEG</button>
+      <button type="button" data-answer="no">GIF</button>
+
+      <p aria-live="polite"></p>
+    </div>
+
+    <aside>
+      <strong>Consejo práctico:</strong>
+      <p>
+        Para fotografías web, comienza probando WebP.
+        Para iconos y logotipos, considera SVG.
+        Si necesitas una captura con detalles muy nítidos,
+        PNG también puede ser una buena opción.
+      </p>
+    </aside>
+
+  </section>
+
+  <!-- SECCIÓN 4: OPTIMIZACIÓN -->
+  <section id="rendimiento">
+
+    <div class="title">
+      <b>04</b>
+
+      <div>
+        <p class="eyebrow">Rendimiento</p>
+        <h2>Optimizar imágenes y mejorar la carga de la web</h2>
+      </div>
+    </div>
+
+    <h3>¿Por qué debemos optimizar las imágenes?</h3>
+
+    <p>
+      Las imágenes pueden ocupar una parte importante
+      del tamaño total de una página web.
+      Si utilizamos muchas fotografías de gran tamaño,
+      el navegador tendrá que descargar más información
+      y la página puede tardar más en mostrarse.
+    </p>
+
+    <p>
+      Pensemos en una fotografía tomada con un móvil.
+      Aunque solo necesitemos mostrarla con un ancho
+      de 500 píxeles, el archivo original puede
+      tener varios miles de píxeles y ocupar
+      varios megabytes.
+    </p>
+
+    <p>
+      Por eso conviene preparar las imágenes
+      antes de incorporarlas a nuestro proyecto.
+    </p>
+
+    <h3>Cómo optimizar una imagen</h3>
+
+    <ol>
+      <li>
+        <strong>Recortar:</strong>
+        elimina las partes que no necesitas.
+      </li>
+
+      <li>
+        <strong>Redimensionar:</strong>
+        adapta las dimensiones al tamaño previsto.
+      </li>
+
+      <li>
+        <strong>Elegir el formato:</strong>
+        selecciona JPG, PNG, WebP, AVIF o SVG
+        según el tipo de imagen.
+      </li>
+
+      <li>
+        <strong>Comprimir:</strong>
+        reduce el peso manteniendo una calidad visual
+        suficiente.
+      </li>
+
+      <li>
+        <strong>Comprobar:</strong>
+        observa el resultado y compara el peso
+        del archivo original con el optimizado.
+      </li>
+    </ol>
+
+    <h3>Herramientas para optimizar imágenes</h3>
+
+    <div class="cards">
+
+      <article>
+        <h3>TinyPNG</h3>
+        <p>
+          Herramienta sencilla para comprimir
+          imágenes y reducir su tamaño.
+        </p>
+        <a href="https://tinypng.com/"
+           target="_blank" rel="noopener noreferrer">
+          Visitar TinyPNG
+        </a>
+      </article>
+
+      <article>
+        <h3>Squoosh</h3>
+        <p>
+          Permite comparar visualmente el archivo
+          original con el comprimido y probar
+          distintos formatos.
+        </p>
+        <a href="https://squoosh.app/"
+           target="_blank" rel="noopener noreferrer">
+          Visitar Squoosh
+        </a>
+      </article>
+
+      <article>
+        <h3>iLoveIMG</h3>
+        <p>
+          Permite redimensionar, comprimir
+          y realizar otras operaciones
+          sencillas con imágenes.
+        </p>
+        <a href="https://www.iloveimg.com/"
+           target="_blank" rel="noopener noreferrer">
+          Visitar iLoveIMG
+        </a>
+      </article>
+
+    </div>
+
+    <aside class="warning">
+      <strong>Un error muy frecuente:</strong>
+
+      <p>
+        Escribir <code>width="300"</code> no reduce
+        automáticamente el peso de la imagen.
+        El navegador puede seguir descargando
+        el archivo original, aunque lo muestre
+        más pequeño.
+      </p>
+    </aside>
+
+    <h3>loading="lazy": cargar las imágenes cuando hagan falta</h3>
+
+    <p>
+      Imagina que tu página tiene veinte fotografías,
+      pero al entrar solamente vemos las dos primeras.
+    </p>
+
+    <p>
+      ¿Tiene sentido descargar inmediatamente
+      las veinte imágenes si el visitante todavía
+      no ha llegado a las que aparecen al final?
+    </p>
+
+    <p>
+      HTML permite utilizar el atributo
+      <code>loading="lazy"</code> para indicar
+      al navegador que puede retrasar la carga
+      de las imágenes situadas fuera de la zona visible.
+    </p>
+
+    <article class="tool">
+      <h3>Ejemplo de carga diferida</h3>
+
+      <pre><code>&lt;img
+  src="imagenes/galeria.jpg"
+  alt="Paisaje de montaña"
+  width="800"
+  height="500"
+  loading="lazy"
+&gt;</code></pre>
+    </article>
+
+    <p>
+      El navegador decide cuándo comenzar
+      la descarga teniendo en cuenta la proximidad
+      de la imagen a la pantalla.
+      No significa necesariamente que espere
+      hasta el instante exacto en que sea visible.
+    </p>
+
+    <aside>
+      <strong>¿Cuándo utilizar lazy loading?</strong>
+
+      <p>
+        Es especialmente útil en galerías,
+        artículos largos y páginas con imágenes
+        que aparecen más abajo.
+      </p>
+
+      <p>
+        En cambio, normalmente no conviene
+        aplicarlo a la imagen principal que
+        debe mostrarse inmediatamente al entrar.
+      </p>
+    </aside>
+
+    <h3>decoding="async": preparar la imagen para mostrarla</h3>
+
+    <p>
+      Antes de mostrar una imagen, el navegador
+      necesita interpretar y descodificar los datos
+      de su archivo.
+    </p>
+
+    <p>
+      El atributo <code>decoding="async"</code>
+      indica una preferencia para que la descodificación
+      pueda realizarse sin bloquear la presentación
+      de otros contenidos.
+    </p>
+
+    <p>
+      Es importante comprender que se trata
+      de una sugerencia y no de una garantía
+      de que la imagen cargue más rápido.
+    </p>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>¿Qué controla?</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><code>loading="lazy"</code></td>
+            <td>
+              Cuándo puede comenzar la carga
+              de la imagen.
+            </td>
+          </tr>
+
+          <tr>
+            <td><code>decoding="async"</code></td>
+            <td>
+              Cómo puede gestionar el navegador
+              su descodificación.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>srcset y sizes: diferentes imágenes para diferentes pantallas</h3>
+
+    <p>
+      Una web puede visitarse desde un móvil,
+      una tableta o un ordenador.
+      No todos estos dispositivos necesitan
+      descargar exactamente el mismo archivo
+      de imagen.
+    </p>
+
+    <p>
+      Con <code>srcset</code> podemos ofrecer
+      varias versiones de una misma fotografía.
+      Después, con <code>sizes</code>, indicamos
+      cuánto espacio ocupará aproximadamente
+      la imagen en el diseño.
+    </p>
+
+    <article class="tool">
+      <h3>Ejemplo de imagen responsive</h3>
+
+      <pre><code>&lt;img
+  src="foto-1024.webp"
+
+  srcset="
+    foto-480.webp 480w,
+    foto-1024.webp 1024w,
+    foto-1920.webp 1920w
+  "
+
+  sizes="(max-width: 700px) 100vw, 640px"
+
+  alt="Portátil sobre una mesa"
+
+  width="640"
+  height="400"
+
+  loading="lazy"
+  decoding="async"
+&gt;</code></pre>
+    </article>
+
+    <h3>¿Cómo interpretamos este ejemplo?</h3>
+
+    <p>
+      El atributo <code>src</code> proporciona
+      una imagen de reserva.
+    </p>
+
+    <p>
+      Con <code>srcset</code> ofrecemos tres
+      archivos diferentes: uno de 480 píxeles,
+      otro de 1024 y otro de 1920 píxeles
+      de ancho.
+    </p>
+
+    <p>
+      El atributo <code>sizes</code> indica que,
+      en pantallas de hasta 700 píxeles,
+      la imagen ocupará aproximadamente
+      todo el ancho de la ventana.
+      En los demás casos, ocupará unos 640 píxeles.
+    </p>
+
+    <p>
+      El navegador tiene en cuenta esta información,
+      junto con las características del dispositivo,
+      para seleccionar el recurso adecuado.
+    </p>
+
+    <aside>
+      <strong>Muy importante:</strong>
+
+      <p>
+        Deben existir realmente los tres archivos
+        indicados en <code>srcset</code>.
+        Además, deben conservar la misma proporción
+        y representar la misma fotografía.
+      </p>
+
+      <p>
+        <code>srcset</code> ayuda a seleccionar
+        el recurso que se descarga, pero no sustituye
+        al CSS que hace que el diseño se adapte
+        a diferentes pantallas.
+      </p>
+    </aside>
+
+    <h3>Cloudinary: una primera aproximación</h3>
+
+    <p>
+      Cuando trabajamos con muchas imágenes,
+      puede resultar útil utilizar servicios
+      especializados para almacenarlas
+      y transformarlas automáticamente.
+    </p>
+
+    <p>
+      Cloudinary permite, entre otras cosas,
+      cambiar dimensiones, formatos y calidad
+      mediante parámetros incluidos en la URL.
+    </p>
+
+    <article class="tool">
+      <h3>Ejemplo de estructura de URL</h3>
+
+      <pre><code>https://res.cloudinary.com/MI_CLOUD/image/upload/w_800,f_auto,q_auto/mi-imagen.jpg</code></pre>
+    </article>
+
+    <p>
+      En este ejemplo, <code>w_800</code>
+      solicita un ancho de 800 píxeles,
+      <code>f_auto</code> permite seleccionar
+      un formato adecuado y <code>q_auto</code>
+      solicita una calidad optimizada.
+    </p>
+
+    <p>
+      Es una URL orientativa que necesita
+      una cuenta y un archivo reales.
+      Cloudinary tampoco sustituye la necesidad
+      de contar con permiso para utilizar las imágenes.
+    </p>
+
+  </section>
+
+  <!-- SECCIÓN 5: AUDIO -->
+  <section id="audio">
+
+    <div class="title">
+      <b>05</b>
+
+      <div>
+        <p class="eyebrow">Sonido</p>
+        <h2>Cómo insertar audio en una página web</h2>
+      </div>
+    </div>
+
+    <p>
+      Las páginas web también pueden incorporar
+      archivos de sonido: una explicación grabada,
+      una entrevista, un podcast o una narración.
+    </p>
+
+    <p>
+      Para insertar estos archivos utilizamos
+      la etiqueta <code>&lt;audio&gt;</code>.
+    </p>
+
+    <h3>El atributo controls</h3>
+
+    <p>
+      Cuando añadimos un audio, lo habitual
+      es ofrecer al visitante un reproductor
+      con controles visibles.
+    </p>
+
+    <p>
+      Para ello utilizamos el atributo
+      <code>controls</code>.
+      El navegador mostrará sus controles nativos,
+      que suelen permitir reproducir, pausar,
+      desplazarse por el audio y ajustar
+      el volumen, dependiendo del dispositivo.
+    </p>
+
+    <article class="tool">
+      <h3>Ejemplo básico</h3>
+
+      <pre><code>&lt;audio controls&gt;
+  &lt;source
+    src="audio/explicacion.mp3"
+    type="audio/mpeg"
+  &gt;
+
+  Tu navegador no puede reproducir este audio.
+&lt;/audio&gt;</code></pre>
+    </article>
+
+    <h3>¿Para qué sirve source?</h3>
+
+    <p>
+      La etiqueta <code>&lt;source&gt;</code>
+      permite indicar el archivo que queremos
+      reproducir y su formato.
+    </p>
+
+    <p>
+      El atributo <code>src</code> contiene la ruta,
+      mientras que <code>type</code> informa
+      del tipo de archivo.
+    </p>
+
+    <h3>¿Debemos utilizar autoplay?</h3>
+
+    <p>
+      No es recomendable que una página comience
+      a reproducir sonidos automáticamente.
+    </p>
+
+    <p>
+      Imagina que alguien está consultando
+      nuestra web en una biblioteca, en una oficina
+      o utilizando un lector de pantalla.
+      Si empieza a sonar un audio sin avisar,
+      puede resultar molesto e incluso dificultar
+      la comprensión del contenido.
+    </p>
+
+    <p>
+      Por eso, en una web educativa,
+      lo más adecuado es permitir que cada
+      persona decida cuándo quiere escucharlo.
+    </p>
+
+    <aside class="warning">
+      <strong>Regla de accesibilidad:</strong>
+
+      <p>
+        El usuario debe poder iniciar,
+        pausar o detener la reproducción
+        y controlar el volumen.
+        Evita utilizar <code>autoplay</code>
+        sin una justificación clara.
+      </p>
+    </aside>
+
+    <h3>¿Y si una persona no puede escuchar el audio?</h3>
+
+    <p>
+      Cuando un audio contiene explicaciones
+      o información importante, debemos ofrecer
+      una alternativa textual.
+    </p>
+
+    <p>
+      Una solución sencilla consiste en incorporar
+      una transcripción que el visitante pueda leer.
+    </p>
+
+    <article class="tool">
+      <h3>Ejemplo de audio con transcripción</h3>
+
+      <pre><code>&lt;audio controls src="audio/explicacion.mp3"&gt;
+&lt;/audio&gt;
+
+&lt;details&gt;
+  &lt;summary&gt;
+    Leer la transcripción
+  &lt;/summary&gt;
+
+  &lt;p&gt;
+    Bienvenidos a nuestra lección
+    sobre imágenes en HTML.
+  &lt;/p&gt;
+&lt;/details&gt;</code></pre>
+    </article>
+
+    <h3>Laboratorio: prueba un archivo de audio</h3>
+
+    <p>
+      Selecciona un archivo de audio guardado
+      en tu ordenador. Se cargará en el reproductor
+      para que puedas comprobar cómo funciona
+      la etiqueta HTML.
+    </p>
+
+    <div class="demo">
+
+      <article>
+        <h3>Reproductor</h3>
+
+        <label for="audioFile">
+          Selecciona un archivo de audio
+        </label>
+
+        <input
+          id="audioFile"
+          type="file"
+          accept="audio/*"
+        >
+
+        <audio
+          id="audioPlayer"
+          controls
+          preload="metadata"
+        ></audio>
+      </article>
+
+      <article class="code">
+
+        <div>
+          <h3>Código HTML</h3>
+          <button type="button" data-copy="audioCode">
+            Copiar código
+          </button>
+        </div>
+
+        <pre><code id="audioCode">&lt;audio controls preload="metadata"&gt;
+  &lt;source
+    src="audio/explicacion.mp3"
+    type="audio/mpeg"
+  &gt;
+  Tu navegador no puede reproducir este audio.
+&lt;/audio&gt;</code></pre>
+
+      </article>
+
+    </div>
+
+    <aside>
+      <strong>Comprueba:</strong>
+      <p>
+        ¿Puedes reproducir y pausar el sonido?
+        ¿Puedes controlar su volumen?
+        ¿Qué ocurriría si alguien no pudiera escucharlo?
+      </p>
+      <p>
+        Recuerda que el archivo seleccionado
+        en este laboratorio es una prueba local.
+        Para utilizarlo en tu proyecto tendrás
+        que guardarlo en la carpeta correspondiente
+        e indicar su ruta en HTML.
+      </p>
+    </aside>
+
+  </section>
+
+  <!-- SECCIÓN 6: VÍDEO -->
+  <section id="video">
+
+    <div class="title">
+      <b>06</b>
+
+      <div>
+        <p class="eyebrow">Contenido audiovisual</p>
+        <h2>Cómo insertar vídeos en HTML5</h2>
+      </div>
+    </div>
+
+    <p>
+      Si queremos mostrar un vídeo que tenemos
+      guardado en nuestro proyecto o servidor,
+      podemos utilizar la etiqueta
+      <code>&lt;video&gt;</code>.
+    </p>
+
+    <p>
+      Su funcionamiento se parece al del audio,
+      pero incorpora otras posibilidades,
+      como mostrar una imagen de portada,
+      activar la pantalla completa
+      o incluir subtítulos.
+    </p>
+
+    <h3>Los atributos más importantes</h3>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Atributo</th>
+            <th>Función</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th><code>controls</code></th>
+            <td>
+              Muestra controles para reproducir,
+              pausar y regular la reproducción.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>poster</code></th>
+            <td>
+              Indica una imagen de portada.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>preload</code></th>
+            <td>
+              Proporciona una sugerencia sobre
+              la precarga de los datos.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>playsinline</code></th>
+            <td>
+              Permite solicitar reproducción
+              integrada en la página.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>width</code></th>
+            <td>
+              Ancho de referencia del reproductor.
+            </td>
+          </tr>
+
+          <tr>
+            <th><code>height</code></th>
+            <td>
+              Altura de referencia del reproductor.
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Un ejemplo completo de vídeo</h3>
+
+    <article class="tool">
+
+      <pre><code>&lt;video
+  controls
+  preload="metadata"
+  poster="imagenes/portada.jpg"
+  width="800"
+  height="450"
+&gt;
+
+  &lt;source
+    src="video/tutorial.mp4"
+    type="video/mp4"
+  &gt;
+
+  &lt;track
+    kind="captions"
+    src="subtitulos/tutorial-es.vtt"
+    srclang="es"
+    label="Español"
+    default
+  &gt;
+
+  Tu navegador no puede reproducir el vídeo.
+&lt;/video&gt;</code></pre>
+
+    </article>
+
+    <h3>¿Por qué son importantes los subtítulos?</h3>
+
+    <p>
+      Los subtítulos permiten acceder
+      al contenido hablado y a la información
+      sonora relevante de un vídeo sin necesidad
+      de escucharlo.
+    </p>
+
+    <p>
+      Esto resulta especialmente importante
+      para personas sordas o con dificultades
+      auditivas, pero también puede ayudar
+      a quienes estudian en lugares donde
+      no pueden activar el sonido.
+    </p>
+
+    <p>
+      En HTML podemos enlazar los subtítulos
+      mediante la etiqueta
+      <code>&lt;track&gt;</code>.
+    </p>
+
+    <h3>El archivo WebVTT</h3>
+
+    <p>
+      Los subtítulos pueden guardarse
+      en un archivo con extensión <code>.vtt</code>.
+      Este archivo contiene los textos
+      y los momentos en los que deben mostrarse.
+    </p>
+
+    <article class="tool">
+
+      <h3>Ejemplo: tutorial-es.vtt</h3>
+
+      <pre><code>WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+Bienvenidos a nuestra lección de HTML.
+
+00:00:04.500 --> 00:00:08.000
+Hoy aprenderemos a insertar vídeos.</code></pre>
+
+    </article>
+
+    <p>
+      En este ejemplo, el primer subtítulo
+      aparece aproximadamente desde el segundo uno
+      hasta el segundo cuatro.
+    </p>
+
+    <p>
+      El archivo debe existir y la ruta indicada
+      en <code>&lt;track&gt;</code> debe
+      coincidir con su ubicación.
+    </p>
+
+    <h3>Laboratorio: prueba un vídeo propio</h3>
+
+    <p>
+      Selecciona un vídeo de tu ordenador.
+      Podrás visualizarlo utilizando
+      el reproductor HTML5 del navegador.
+    </p>
+
+    <div class="demo">
+
+      <article>
+
+        <h3>Reproductor de vídeo</h3>
+
+        <label for="videoFile">
+          Selecciona un vídeo local
+        </label>
+
+        <input
+          id="videoFile"
+          type="file"
+          accept="video/*"
+        >
+
+        <video
+          id="videoPlayer"
+          controls
+          preload="metadata"
+          playsinline
+        ></video>
+
+      </article>
+
+      <article class="code">
+
+        <div>
+          <h3>Código HTML</h3>
+          <button type="button" data-copy="videoCode">
+            Copiar código
+          </button>
+        </div>
+
+        <pre><code id="videoCode">&lt;video
+  controls
+  preload="metadata"
+  poster="portada.jpg"
+&gt;
+  &lt;source
+    src="video/demo.mp4"
+    type="video/mp4"
+  &gt;
+
+  &lt;track
+    kind="captions"
+    src="subtitulos-es.vtt"
+    srclang="es"
+    label="Español"
+  &gt;
+&lt;/video&gt;</code></pre>
+
+      </article>
+
+    </div>
+
+    <aside>
+      <strong>Una buena práctica:</strong>
+
+      <p>
+        Evita iniciar automáticamente vídeos
+        con sonido. Muestra controles visibles
+        y proporciona subtítulos cuando
+        el contenido los necesite.
+      </p>
+
+      <p>
+        También debemos procurar que el reproductor
+        se adapte al ancho de la pantalla,
+        especialmente en dispositivos móviles.
+      </p>
+    </aside>
+
+  </section>
+
+  <!-- SECCIÓN 7: YOUTUBE -->
+  <section id="youtube">
+
+    <div class="title">
+      <b>07</b>
+
+      <div>
+        <p class="eyebrow">Contenido externo</p>
+        <h2>Cómo insertar un vídeo de YouTube</h2>
+      </div>
+    </div>
+
+    <p>
+      Hasta ahora hemos aprendido a insertar
+      vídeos que guardamos en nuestro proyecto.
+      Pero ¿qué ocurre si el vídeo está alojado
+      en YouTube?
+    </p>
+
+    <p>
+      En ese caso no necesitamos descargarlo.
+      Podemos mostrar el reproductor de YouTube
+      dentro de nuestra página mediante
+      la etiqueta <code>&lt;iframe&gt;</code>.
+    </p>
+
+    <h3>¿Qué es un iframe?</h3>
+
+    <p>
+      Un <code>iframe</code> permite incrustar
+      otro documento HTML dentro de una página.
+      Por ejemplo, podemos mostrar un reproductor
+      de YouTube sin tener que crear
+      nuestro propio reproductor.
+    </p>
+
+    <h3>Cómo obtener el código de YouTube</h3>
+
+    <ol>
+      <li>Abre el vídeo que quieres utilizar.</li>
+      <li>Selecciona la opción <strong>Compartir</strong>.</li>
+      <li>Elige <strong>Insertar</strong>.</li>
+      <li>Copia el código HTML proporcionado.</li>
+      <li>Pégalo en el lugar correspondiente de tu página.</li>
+    </ol>
+
+    <p>
+      Ten en cuenta que algunos vídeos
+      no permiten la reproducción incrustada,
+      según la configuración de sus propietarios.
+    </p>
+
+    <h3>Ejemplo de iframe</h3>
+
+    <article class="tool">
+
+      <pre><code>&lt;iframe
+  src="https://www.youtube.com/embed/VIDEO_ID"
+  title="Tutorial de HTML"
+  width="560"
+  height="315"
+  loading="lazy"
+  allowfullscreen
+&gt;
+&lt;/iframe&gt;</code></pre>
+
+    </article>
+
+    <p>
+      Debemos sustituir <code>VIDEO_ID</code>
+      por el identificador del vídeo que queremos
+      mostrar. Si utilizas la opción Insertar
+      de YouTube, la plataforma te proporciona
+      la dirección adecuada.
+    </p>
+
+    <h3>¿Cómo conseguir que el iframe sea responsive?</h3>
+
+    <p>
+      Un reproductor con dimensiones fijas
+      puede ocupar más espacio del disponible
+      en una pantalla pequeña.
+    </p>
+
+    <p>
+      Podemos resolverlo utilizando CSS
+      y manteniendo una proporción de 16:9.
+    </p>
+
+    <article class="tool">
+
+      <h3>Ejemplo de iframe adaptable</h3>
+
+      <pre><code>&lt;div class="video-responsive"&gt;
+
+  &lt;iframe
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="Tutorial de HTML"
+    loading="lazy"
+    allowfullscreen
+  &gt;&lt;/iframe&gt;
+
+&lt;/div&gt;</code></pre>
+
+      <pre><code>.video-responsive {
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+}
+
+.video-responsive iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}</code></pre>
+
+    </article>
+
+    <h3>Laboratorio: genera tu iframe</h3>
+
+    <p>
+      Copia la dirección de un vídeo de YouTube
+      y pégala en el siguiente campo.
+      La aplicación intentará obtener
+      su identificador y generará
+      el código necesario para insertarlo.
+    </p>
+
+    <article class="tool">
+
+      <h3>Generador de iframe de YouTube</h3>
+
+      <label for="ytUrl">
+        Introduce la URL del vídeo
+      </label>
+
+      <input
+        id="ytUrl"
+        type="url"
+        placeholder="https://www.youtube.com/watch?v=..."
+      >
+
+      <button id="ytGenerate" type="button">
+        Generar iframe
+      </button>
+
+      <p id="ytFeedback" aria-live="polite"></p>
+
+      <div id="ytPreview" class="embed"></div>
+
+      <pre><code id="ytCode">Introduce una URL válida de YouTube para generar el código.</code></pre>
+
+      <button type="button" data-copy="ytCode">
+        Copiar código
+      </button>
+
+    </article>
+
+    <h3>¿iframe y frameset son lo mismo?</h3>
+
+    <p>
+      No. Aunque sus nombres se parecen,
+      son elementos diferentes.
+    </p>
+
+    <p>
+      En temas anteriores vimos que
+      <code>&lt;frameset&gt;</code> y
+      <code>&lt;frame&gt;</code> se utilizaban
+      antiguamente para dividir toda la ventana
+      del navegador en diferentes marcos.
+      Estas etiquetas están obsoletas.
+    </p>
+
+    <p>
+      En cambio, <code>&lt;iframe&gt;</code>
+      sigue siendo una etiqueta válida de HTML5
+      y puede utilizarse para incrustar
+      contenido externo.
+    </p>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Etiqueta</th>
+            <th>Situación actual</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><code>&lt;frameset&gt;</code></td>
+            <td>Obsoleta</td>
+          </tr>
+          <tr>
+            <td><code>&lt;frame&gt;</code></td>
+            <td>Obsoleta</td>
+          </tr>
+          <tr>
+            <td><code>&lt;iframe&gt;</code></td>
+            <td>Válida en HTML5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <aside>
+      <strong>Ten en cuenta la privacidad:</strong>
+
+      <p>
+        Al insertar contenido de YouTube,
+        nuestra página puede establecer conexiones
+        con servicios externos.
+        En proyectos reales debemos tener
+        en cuenta las obligaciones de privacidad
+        y consentimiento que correspondan.
+      </p>
+    </aside>
+
+  </section>
+
+  <!-- SECCIÓN 8: OTRAS ETIQUETAS -->
+  <section id="otros">
+
+    <div class="title">
+      <b>08</b>
+
+      <div>
+        <p class="eyebrow">Ampliación</p>
+        <h2>Otras etiquetas para insertar recursos</h2>
+      </div>
+    </div>
+
+    <p>
+      HTML también dispone de las etiquetas
+      <code>&lt;object&gt;</code> y
+      <code>&lt;embed&gt;</code>.
+    </p>
+
+    <p>
+      Estas etiquetas permiten incorporar
+      determinados recursos externos.
+      Aunque siguen siendo válidas,
+      actualmente utilizamos normalmente
+      <code>&lt;audio&gt;</code> para sonidos
+      y <code>&lt;video&gt;</code> para vídeos.
+    </p>
+
+    <div class="cards">
+
+      <article>
+        <h3>&lt;object&gt;</h3>
+
+        <p>
+          Permite incorporar recursos externos
+          y ofrecer contenido alternativo
+          cuando no pueden mostrarse.
+        </p>
+      </article>
+
+      <article>
+        <h3>&lt;embed&gt;</h3>
+
+        <p>
+          Permite incrustar determinados
+          contenidos externos mediante
+          una etiqueta específica.
+        </p>
+      </article>
+
+      <article>
+        <h3>Documentos PDF</h3>
+
+        <p>
+          Un ejemplo de uso de
+          <code>&lt;object&gt;</code>
+          es mostrar un documento PDF
+          dentro de la página.
+        </p>
+      </article>
+
+    </div>
+
+    <article class="tool">
+
+      <h3>Ejemplo: insertar un PDF</h3>
+
+      <pre><code>&lt;object
+  data="documento.pdf"
+  type="application/pdf"
+  width="100%"
+  height="500"
+&gt;
+
+  &lt;a href="documento.pdf"&gt;
+    Abrir o descargar el PDF
+  &lt;/a&gt;
+
+&lt;/object&gt;</code></pre>
+
+    </article>
+
+    <aside>
+      <strong>No confundas:</strong>
+
+      <p>
+        Una etiqueta poco utilizada no es
+        necesariamente una etiqueta obsoleta.
+        Debemos aprender a elegir la herramienta
+        más apropiada para cada contenido.
+      </p>
+    </aside>
+
+  </section>
+
+  <!-- SECCIÓN 9: REPASO -->
+  <section id="resumen">
+
+    <div class="title">
+      <b>09</b>
+
+      <div>
+        <p class="eyebrow">Consulta y práctica</p>
+        <h2>Repasamos lo aprendido</h2>
+      </div>
+    </div>
+
+    <p>
+      Ya conocemos las principales etiquetas HTML5
+      para incorporar imágenes y contenido multimedia.
+    </p>
+
+    <p>
+      La siguiente tabla puede servirte como
+      referencia rápida cuando estés realizando
+      tus actividades.
+    </p>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Quiero insertar...</th>
+            <th>Etiqueta</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Una imagen</td>
+            <td><code>&lt;img&gt;</code></td>
+          </tr>
+
+          <tr>
+            <td>Un sonido</td>
+            <td><code>&lt;audio&gt;</code></td>
+          </tr>
+
+          <tr>
+            <td>Un vídeo propio</td>
+            <td><code>&lt;video&gt;</code></td>
+          </tr>
+
+          <tr>
+            <td>Un vídeo de YouTube</td>
+            <td><code>&lt;iframe&gt;</code></td>
+          </tr>
+
+          <tr>
+            <td>Una imagen con pie</td>
+            <td>
+              <code>&lt;figure&gt;</code>
+              y
+              <code>&lt;figcaption&gt;</code>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Subtítulos de un vídeo</td>
+            <td><code>&lt;track&gt;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Actividad final: crea tu página multimedia</h3>
+
+    <p>
+      Te propongo reunir lo aprendido en una
+      pequeña página HTML.
+      Puedes utilizar imágenes provisionales
+      y archivos de audio o vídeo propios.
+    </p>
+
+    <p>Tu página debe contener:</p>
+
+    <ol>
+      <li>
+        Una imagen con los atributos
+        <code>src</code>, <code>alt</code>,
+        <code>width</code> y <code>height</code>.
+      </li>
+
+      <li>
+        Una segunda imagen con
+        <code>loading="lazy"</code>.
+      </li>
+
+      <li>
+        Un reproductor de audio con controles
+        y una transcripción.
+      </li>
+
+      <li>
+        Un vídeo con controles, portada
+        y subtítulos.
+      </li>
+
+      <li>
+        Un vídeo de YouTube insertado
+        mediante <code>&lt;iframe&gt;</code>.
+      </li>
+    </ol>
+
+    <h3>Antes de entregar, comprueba lo siguiente</h3>
+
+    <ul>
+      <li>
+        Todas las rutas de los archivos funcionan.
+      </li>
+      <li>
+        Las imágenes tienen textos alternativos
+        apropiados.
+      </li>
+      <li>
+        Los recursos no comienzan a reproducirse
+        inesperadamente.
+      </li>
+      <li>
+        Podemos pausar el audio y el vídeo.
+      </li>
+      <li>
+        Los subtítulos y las transcripciones
+        están disponibles cuando se necesitan.
+      </li>
+      <li>
+        Las imágenes y reproductores se adaptan
+        a diferentes tamaños de pantalla.
+      </li>
+    </ul>
+
+    <h3>¿Qué hacer si algo no funciona?</h3>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th>Problema</th>
+            <th>Qué revisar</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>La imagen no aparece</td>
+            <td>
+              Ruta, nombre y extensión del archivo.
+            </td>
+          </tr>
+
+          <tr>
+            <td>No se ven controles multimedia</td>
+            <td>
+              Comprueba el atributo controls.
+            </td>
+          </tr>
+
+          <tr>
+            <td>El vídeo no se reproduce</td>
+            <td>
+              Revisa la ruta y el formato.
+            </td>
+          </tr>
+
+          <tr>
+            <td>No aparecen los subtítulos</td>
+            <td>
+              Comprueba el archivo .vtt
+              y la ruta de track.
+            </td>
+          </tr>
+
+          <tr>
+            <td>La imagen se deforma</td>
+            <td>
+              Revisa la proporción y las dimensiones.
+            </td>
+          </tr>
+
+          <tr>
+            <td>YouTube no funciona</td>
+            <td>
+              Comprueba la URL y si el vídeo permite
+              su inserción.
+            </td>
+          </tr>
+
+          <tr>
+            <td>La página carga lentamente</td>
+            <td>
+              Revisa peso, dimensiones y formatos
+              de las imágenes.
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <article class="quiz">
+
+      <div>
+        <h3>Comprueba lo aprendido</h3>
+        <output id="score">0 / 8</output>
+      </div>
+
+      <p>
+        Responde a las siguientes preguntas.
+        Cuando selecciones una opción,
+        recibirás una explicación.
+        Puedes repetir el cuestionario
+        tantas veces como necesites.
+      </p>
+
+      <div id="quizArea"></div>
+
+      <button id="restart" type="button">
+        Repetir cuestionario
+      </button>
+
+    </article>
+
+    <aside>
+      <strong>Para terminar:</strong>
+
+      <p>
+        Lo importante no es memorizar todas
+        las etiquetas y atributos desde el principio.
+        Lo fundamental es comprender qué hace
+        cada elemento, cuándo debemos utilizarlo
+        y cómo comprobar que funciona.
+      </p>
+
+      <p>
+        Puedes volver a consultar esta página
+        siempre que necesites incorporar
+        una imagen, un sonido o un vídeo
+        a tus proyectos.
+      </p>
+    </aside>
+
+  </section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+<footer>
+  <div class="wrap">
+    <p>
+      UF1302 — Creación de páginas web
+      con el lenguaje de marcas.
+    </p>
+
+    <p>
+      MF0950_2 — Construcción de páginas web.
+    </p>
+  </div>
+</footer>
+
+<!-- NOTIFICACIONES -->
+<div
+  id="toast"
+  role="status"
+  aria-live="polite"
+></div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
