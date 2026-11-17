@@ -81,6 +81,33 @@ nav a:hover {
 main {
   padding: 2rem 0 5rem;
 }
+.topic-infographic {
+  margin: 0 auto 2rem;
+}
+.topic-infographic img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.lesson-card,
+.next-lesson {
+  padding: 1.25rem;
+  border: 1px solid #d7e0ea;
+  border-radius: 14px;
+  background: #fff;
+}
+.lesson-card .button,
+.next-lesson .button {
+  display: inline-block;
+  margin-top: .5rem;
+}
 .intro,
 .tool,
 .quiz,
@@ -303,6 +330,9 @@ thead {
   position: relative;
   padding-top: 56.25%;
   margin: 1rem 0;
+}
+.embed:empty {
+  display: none;
 }
 .embed iframe {
   position: absolute;
